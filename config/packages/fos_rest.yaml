@@ -1,0 +1,35 @@
+# Read the documentation: https://symfony.com/doc/master/bundles/FOSRestBundle/index.html
+fos_rest:
+#    param_fetcher_listener:  true
+#    allowed_methods_listener:  true
+    routing_loader:
+      include_format: false
+    view:
+      view_response_listener: true
+      formats:
+        json: true
+      templating_formats:
+        html: true
+    zone:
+      - { path: ^/api }
+    exception:
+      enabled: true
+      # pour avoir des messages d'erreur génériques en mode prod, enlever 'messages':
+      messages:
+        'Symfony\Component\HttpKernel\Exception\NotFoundHttpException': true
+        'Symfony\Component\Security\Core\Exception\BadCredentialsException': true
+        # 'Symfony\Component\Security\Core\Exception\BadRequestHttpException': true
+      codes:
+        'Symfony\Component\Security\Core\Exception\BadCredentialsException': 401
+#      messages:
+#         App\Exception\MyException: Forbidden area.
+    format_listener:
+      rules:
+        - { path: ^/api, fallback_format: json, priorities: [ json ], prefer_extension: false }
+        - { path: ^/, fallback_format: html, priorities: [ html ], prefer_extension: false }
+    body_listener:
+      enabled: true
+    param_fetcher_listener:
+      enabled: true
+    serializer:
+      serialize_null: true

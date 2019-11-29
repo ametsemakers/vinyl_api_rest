@@ -1,0 +1,84 @@
+App\Entity\Vinyl:
+    properties:
+        artist:
+            - NotBlank: ~
+            - Type: string
+        title_album:
+            - NotBlank: ~
+            - Type: string
+        label:
+            - NotBlank: ~
+            - Type: string
+        country:
+            - NotBlank: ~
+            - Type: string
+        cat_nb:
+            - NotBlank: ~
+            - Type: string
+        year_original:
+            - NotBlank: ~
+            - Type: string
+        year_edition:
+            - NotBlank: ~
+            - Type: string
+        songs:
+            - Valid: ~
+        image:
+            - Valid: ~
+
+App\Entity\Song:
+    properties:
+        title_song:
+            - NotBlank: ~
+            - Type: string
+        artist:
+            - NotBlank: ~
+            - Type: string
+        alternate_info:
+            - Type: string
+        featuring:
+            - Type: string
+        title_album:
+            - NotBlank: ~
+            - Type: string
+        side:
+            - NotBlank: ~
+            - Type: string
+        position:
+            - NotBlank: ~
+            - Type: integer
+
+App\Entity\Image:
+    properties:
+        path:
+            - Type: string
+
+App\Entity\User:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: email
+    properties:
+        firstname:
+            - NotBlank: ~
+            - Type: string
+        lastname:
+            - NotBlank: ~
+            - Type: string
+        email:
+            - NotBlank: ~
+            - Email: ~
+        plainPassword:
+            - NotBlank: { groups: [New, FullUpdate] }
+            - Type: string
+            - Length:
+                min: 4
+                max: 50
+
+App\Entity\Credentials:
+    properties:
+        login:
+            - NotBlank: ~
+            - Type: string
+        password:
+            - NotBlank: ~
+            - Type: string
+       

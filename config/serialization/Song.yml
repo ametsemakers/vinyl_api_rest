@@ -1,0 +1,20 @@
+App\Entity\Song:
+  attributes:
+    id:
+      groups: [ 'vinyl', 'song' ]
+    title_song:
+      groups: [ 'vinyl', 'song' ]
+    artist:
+      groups: [ 'song' ]
+    alternate_info:
+      groups: [ 'vinyl', 'song' ]
+    featuring:
+      groups: [ 'vinyl', 'song' ]
+    title_album:
+      groups: [ 'song' ]
+    side:
+      groups: [ 'vinyl', 'song' ]
+    position:
+      groups: [ 'vinyl', 'song' ]  
+    vinyl:
+      groups: [ 'song' ]

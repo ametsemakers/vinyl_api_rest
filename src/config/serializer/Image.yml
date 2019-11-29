@@ -1,0 +1,7 @@
+App\Entity\Image:
+  exclusion_policy: none
+  properties:
+    id:
+      groups: [ 'vinyl' ]
+    path:
+      groups: [ 'vinyl' ]

@@ -1,0 +1,23 @@
+App\Entity\Vinyl:
+  exclusion_policy: none
+  properties:
+    id:
+      groups: [ 'vinyl', 'song' ]
+    artist:
+      groups: [ 'vinyl', 'song' ]
+    title_album:
+      groups: [ 'vinyl', 'song' ]
+    label:
+      groups: [ 'vinyl', 'song' ]
+    country:
+      groups: [ 'vinyl', 'song' ]
+    cat_nb:
+      groups: [ 'vinyl', 'song' ]
+    year_original:
+      groups: [ 'vinyl', 'song' ]
+    year_edition:
+      groups: [ 'vinyl', 'song' ]
+    songs:
+      groups: [ 'vinyl' ]
+    image:
+      groups: [ 'vinyl' ]

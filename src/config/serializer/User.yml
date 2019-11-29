@@ -1,0 +1,19 @@
+App\Entity\User:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+      groups: [ user, preference, auth-token ]
+    firstname:
+      expose: true
+      groups: [ user, preference, auth-token ]
+    lastname:
+      expose: true
+      groups: [ user, preference, auth-token ]
+    email:
+      expose: true
+      groups: [ user, preference, auth-token ]
+    preferences:
+      expose: true
+      groups: [ 'user' ]
+    

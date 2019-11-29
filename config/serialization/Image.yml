@@ -1,0 +1,6 @@
+App\Entity\Image:
+  attributes:
+    id:
+      groups: [ 'vinyl' ]
+    path:
+      groups: [ 'vinyl' ]

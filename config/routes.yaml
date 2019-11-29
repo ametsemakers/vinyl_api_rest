@@ -1,3 +1,32 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+app:
+  resource: App\Controller\DefaultController
+  type:     annotation
+
+vinyls:
+  type:     rest
+  resource: App\Controller\Api\VinylController
+  prefix: /api
+
+songs:
+  type:     rest
+  resource: App\Controller\Api\Vinyl\SongController
+  prefix: /api
+
+images:
+  type:     rest
+  resource: App\Controller\Api\Vinyl\ImageController
+  prefix: /api
+
+users:
+  type:     rest
+  resource: App\Controller\Api\UserController
+  prefix: /api
+
+auth-tokens:
+  type:     rest
+  resource: App\Controller\Api\AuthTokenController
+  prefix: /api
